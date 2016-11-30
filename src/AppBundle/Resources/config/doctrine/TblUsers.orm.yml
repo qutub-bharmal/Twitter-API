@@ -1,0 +1,201 @@
+AppBundle\Entity\TblUsers:
+    type: entity
+    table: tbl_users
+    indexes:
+        identifier:
+            columns:
+                - identifier
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        identifier:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        websiteurl:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+            column: webSiteURL
+        profileurl:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+            column: profileURL
+        photourl:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+            column: photoURL
+        displayname:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: displayName
+        description:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+        firstname:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: firstName
+        lastname:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: lastName
+        gender:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        language:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        followersCount:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+            column: followers_count
+        friendsCount:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+            column: friends_count
+        listedCount:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+            column: listed_count
+        age:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        birthday:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: birthDay
+        birthmonth:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: birthMonth
+        birthyear:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: birthYear
+        email:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        emailverified:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: emailVerified
+        phone:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        address:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        country:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        region:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        city:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        zip:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        jobTitle:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: job_title
+        organizationName:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: organization_name
+        response:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

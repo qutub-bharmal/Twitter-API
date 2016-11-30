@@ -1,0 +1,17 @@
+home:
+    path:      /home
+    defaults:  { _controller: AppBundle:Default:index }
+
+addUser:
+    path: /{name}
+    defaults:
+      _controller: AppBundle:Default:addUser
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+
+EndroidTwitterBundle:
+    resource:   "@EndroidTwitterBundle/Controller/"
+    type:       annotation
+    prefix:     /twitterapi

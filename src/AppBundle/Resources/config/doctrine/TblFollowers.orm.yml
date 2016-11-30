@@ -1,0 +1,326 @@
+AppBundle\Entity\TblFollowers:
+    type: entity
+    table: tbl_followers
+    indexes:
+        f_id:
+            columns:
+                - f_id
+        name:
+            columns:
+                - name
+        screen_name:
+            columns:
+                - screen_name
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        userId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: user_id
+        fId:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: f_id
+        name:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        screenName:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: screen_name
+        location:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        description:
+            type: string
+            nullable: false
+            length: 1000
+            options:
+                fixed: false
+        url:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+        protected:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        followersCount:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: followers_count
+        friendsCount:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: friends_count
+        listedCount:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: listed_count
+        createdAt:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: created_at
+        favouritesCount:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: favourites_count
+        utcOffset:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: utc_offset
+        timeZone:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: time_zone
+        geoEnabled:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: geo_enabled
+        verified:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        statusesCount:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: statuses_count
+        lang:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        contributorsEnabled:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: contributors_enabled
+        isTranslator:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: is_translator
+        isTranslationEnabled:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: is_translation_enabled
+        profileBackgroundColor:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: profile_background_color
+        profileBackgroundImageUrl:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+            column: profile_background_image_url
+        profileBackgroundImageUrlHttps:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+            column: profile_background_image_url_https
+        profileBannerUrl:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+            column: profile_banner_url
+        profileBackgroundTile:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: profile_background_tile
+        profileImageUrl:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+            column: profile_image_url
+        profileImageUrlHttps:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+            column: profile_image_url_https
+        profileSidebarBorderColor:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: profile_sidebar_border_color
+        profileSidebarFillColor:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: profile_sidebar_fill_color
+        profileTextColor:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: profile_text_color
+        profileUseBackgroundImage:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: profile_use_background_image
+        hasExtendedProfile:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: has_extended_profile
+        defaultProfile:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: default_profile
+        defaultProfileImage:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: default_profile_image
+        following:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        liveFollowing:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: live_following
+        followRequestSent:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: follow_request_sent
+        notifications:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        muting:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        blocking:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        blockedBy:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: blocked_by
+        translatorType:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: translator_type
+        response:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

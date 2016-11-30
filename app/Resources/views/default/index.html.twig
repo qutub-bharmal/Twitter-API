@@ -1,0 +1,141 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="pageOverLay" style="display: none"><div class="loader"></div></div>
+
+	<div class="main">
+			<header>
+				<div class="header-top">
+					<div class="container">
+						<div class="header-right">
+							<form name="form_search" id="form_search" action="/" method="POST" onsubmit="return submitSearch();">
+								<div class="searchbox">
+									<input type="text" name="search" id="txt_search" required value="{% if search %}{{ search }}{% endif %}" />
+									<select name="sel_user" id="sel_user">
+										<option value="0">Select User</option>
+										{% for user in users %}
+											<option value="{{ user.id }}"
+											{% if sel_user == user.id %}
+											{{ 'selected' }}
+											{% endif %} >{{ user.displayName }}</option>
+										{% endfor %}
+									</select>
+								</div>
+								<div class="searchbutton">
+									<input type="submit" name="submit" id="form_submit" value="SEARCH" />
+								</div>
+								<div class="clearfix"></div>
+							</form>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</header>
+			<div class="box_layout" style="margin-top:20px;">
+				<div class="col-md-4">
+					<h2>Users ({{ users|length }})</h2>
+					<hr/>
+					{% for user in users %}
+						 <a href="/{{ user.displayName }}">
+							<div class="col-md-2">
+								<img src="{{ user.photoURL }}">
+							</div>
+							<div class="col-md-10">
+								<h6>{{ user.displayName }}</h6>
+								<p>{{ user.description }}</p>
+							</div>
+							<div class="clearfix"></div>
+						</a>
+						<hr/>
+					{% endfor %}
+					{% if maxPages > 1 %}
+						<ul class="pagination pagination-sm">
+							{# `«` arrow  #}
+							<li {{ thisPage == 1 ? 'class="disabled"' }}>
+								<a href="{{ path('home', {page: thisPage-1 < 1 ? 1 : thisPage-1}) }}">«</a>
+							</li>
+
+							{# Render each page number #}
+							{% for i in 1..maxPages %}
+							<li {{ thisPage == i ? 'class="active"' }}>
+							<a href="{{ path('home', {page: i}) }}">{{ i }}</a>
+							</li>
+							{% endfor %}
+
+							{# `»` arrow #}
+							<li {{ thisPage == maxPages ? 'class="disabled"' }}>
+								<a href="{{ path('home', {page: thisPage+1 <= maxPages ? thisPage+1 : thisPage}) }}">»</a>
+							</li>
+						</ul>
+					{% endif %}
+				</div>
+
+				<div class="col-md-8" id="timeline_container">
+					<h2>Timeline</h2>
+					<hr/>
+					{% for line in result %}
+						<div class="col-md-2">
+							<img src="{{ line.TUserPhotourl }}">
+						</div>
+						<div class="col-md-10">
+							<h6>{{ line.Ttext }}</h6>
+						</div>
+						<div class="clearfix"></div>
+						<hr/>
+					{% endfor %}
+					{% if maxPages1 > 1 %}
+						<ul class="pagination pagination-sm">
+							{# `«` arrow  #}
+							<li {{ thisPage1 == 1 ? 'class="disabled"' }}>
+								<a href="{{ path('home', { pageTimeline: thisPage1-1 < 1 ? 1 : thisPage1-1 } ) }}{{ '&search='~search~'&sel_user='~sel_user }}">«</a>
+							</li>
+
+							{# Render each page number #}
+							{% for i in 1..maxPages1 %}
+							<li {{ thisPage1 == i ? 'class="active"' }}>
+								<a href="{{ path('home', {pageTimeline: i}) }}{{ '&search='~search~'&sel_user='~sel_user }}">{{ i }}</a>
+							</li>
+							{% endfor %}
+
+							{# `»` arrow #}
+							<li {{ thisPage1 == maxPages1 ? 'class="disabled"' }}>
+								<a href="{{ path('home', {pageTimeline: thisPage1+1 <= maxPages1 ? thisPage1+1 : thisPage1}) }}{{ '&search='~search~'&sel_user='~sel_user }}">»</a>
+							</li>
+						</ul>
+					{% endif %}
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+{% endblock %}
+
+{% block stylesheets %}
+<style>
+	/*
+	body { background: #F5F5F5; font: 18px/1.5 sans-serif; }
+	h1, h2 { line-height: 1.2; margin: 0 0 .5em; }
+	h1 { font-size: 36px; }
+	h2 { font-size: 21px; margin-bottom: 1em; }
+	p { margin: 0 0 1em 0; }
+	a { color: #0000F0; }
+	a:hover { text-decoration: none; }
+	code { background: #F5F5F5; max-width: 100px; padding: 2px 6px; word-wrap: break-word; }
+	#wrapper { background: #FFF; margin: 1em auto; max-width: 800px; width: 95%; }
+	#container { padding: 2em; }
+	#welcome, #status { margin-bottom: 2em; }
+	#welcome h1 span { display: block; font-size: 75%; }
+	#icon-status, #icon-book { float: left; height: 64px; margin-right: 1em; margin-top: -4px; width: 64px; }
+	#icon-book { display: none; }
+
+	@media (min-width: 768px) {
+		#wrapper { width: 80%; margin: 2em auto; }
+		#icon-book { display: inline-block; }
+		#status a, #next a { display: block; }
+
+		@-webkit-keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
+		@keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
+		.sf-toolbar { opacity: 0; -webkit-animation: fade-in 1s .2s forwards; animation: fade-in 1s .2s forwards;}
+	}
+	*/
+</style>
+{% endblock %}

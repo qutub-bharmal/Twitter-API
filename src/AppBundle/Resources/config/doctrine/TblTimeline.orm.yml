@@ -1,0 +1,94 @@
+AppBundle\Entity\TblTimeline:
+    type: entity
+    table: tbl_timeline
+    indexes:
+        t_id:
+            columns:
+                - t_id
+        t_text:
+            columns:
+                - t_text
+        t_user_identifier:
+            columns:
+                - t_user_identifier
+        t_user_displayName:
+            columns:
+                - t_user_displayName
+        t_user_profileURL:
+            columns:
+                - t_user_profileURL
+        t_user_photoURL:
+            columns:
+                - t_user_photoURL
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        userId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: user_id
+        tId:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: t_id
+        tDate:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: t_date
+        tText:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+            column: t_text
+        tUserIdentifier:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: t_user_identifier
+        tUserDisplayname:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: t_user_displayName
+        tUserProfileurl:
+            type: string
+            nullable: false
+            length: 1000
+            options:
+                fixed: false
+            column: t_user_profileURL
+        tUserPhotourl:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+            column: t_user_photoURL
+        response:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,15 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: localhost
+    database_port: null
+    database_name: web_burza
+    database_user: web_burza
+    database_password: P=u3lW@mHEaV
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    secret: 39ee93450c305bb3fc090e6ef16379586845292b
+    num_users: 10
+    num_timelineSearch: 20
+    num_timelineCount: 20
